@@ -45,7 +45,7 @@ public class Test {
         //System.out.println(c.put("/data/contact", json));
         //json=c.get("/data/contact/10");
         ClientRN rn=new ClientRN();
-        System.out.println(rn.getInfo());
+        System.out.println(rn.getInfo().size());
 //        System.out.println();
 //        try {
 //            contacto=mapper.readValue(json, Contact.class);

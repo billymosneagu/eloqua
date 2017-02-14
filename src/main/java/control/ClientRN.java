@@ -31,7 +31,11 @@ public class ClientRN {
     
     
     
-    
+    /**
+     * Manda una peticion para que le devuelva un json con todos los contactos, guardando cada linea en un arraylist.
+     * 
+     * @return 
+     */
     public ArrayList<ContactoRN> getInfo() {
         ArrayList<String> cadena = new ArrayList<>();
         try {
@@ -57,7 +61,12 @@ public class ClientRN {
         }
         return getContacts(cadena);
     }
-
+    /**
+     * De el anterior arraylist que almacena el json recogemos solo los ids y guardamos en otra lista los contactos  con dicho id
+     * y que tengan un email.
+     * @param cadena
+     * @return 
+     */
     public ArrayList<ContactoRN> getContacts(ArrayList<String> cadena) {
         ArrayList<Integer> ids = new ArrayList<>();
         ArrayList<ContactoRN> contactos = new ArrayList<>();
@@ -69,14 +78,24 @@ public class ClientRN {
                 linea = linea.replaceAll("\\s", "");
                 int id = Integer.valueOf(linea);
                 ids.add(id);
-                contactos.add(getContacto(id));
+                String email=getEmail(id);
+                if(email!=null){
+                    ContactoRN contact=getContacto(id);
+                    contact.setEmail(email);
+                    contactos.add(contact);
+                }
+                
             }
 
         }
        
         return contactos;
     }
-
+    /**
+     * Devuelve el email a partir del id de contacto
+     * @param id
+     * @return 
+     */
     public String getEmail(int id) {
         String email = null;
         try {
@@ -112,6 +131,11 @@ public class ClientRN {
         }
         return email;
     }
+    /**
+     * Devuelve el contacto a partir de su id.
+     * @param id
+     * @return 
+     */
     public ContactoRN getContacto(int id) {
         String email = null;
         ContactoRN contacto=null;

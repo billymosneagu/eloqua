@@ -12,6 +12,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
  *
  * @author Billy
  */
+
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class C {
     private String existing_custom;
@@ -34,7 +35,7 @@ public class C {
     private String pasaporte;
     private boolean autoriza_mailing;
     private LinkedField sexo;
-    private String trato;
+    private LinkedField trato;
     private String promedio_duracion_estancia;
     private String forma_pago_habitual;
     private String numero_de_reservas;
@@ -211,11 +212,11 @@ public class C {
         this.sexo = sexo;
     }
 
-    public String getTrato() {
+    public LinkedField getTrato() {
         return trato;
     }
 
-    public void setTrato(String trato) {
+    public void setTrato(LinkedField trato) {
         this.trato = trato;
     }
 

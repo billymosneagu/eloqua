@@ -8,7 +8,7 @@ package model;
 import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 
 /**
- *
+ *Objetos que contienen un array de Links
  * @author Billy
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
