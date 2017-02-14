@@ -5,10 +5,13 @@
  */
 package model;
 
+import org.codehaus.jackson.annotate.JsonIgnoreProperties;
+
 /**
  *
  * @author Billy
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class LinkedField {
     private Link[] links;
 

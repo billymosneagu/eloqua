@@ -14,7 +14,7 @@ import org.codehaus.jackson.annotate.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Address {
    private String city;
-   private String country;
+   private LinkedField country;
    private String postalCode;
    private String stateOrProvince;
    private String street;
@@ -30,11 +30,11 @@ public class Address {
         this.city = city;
     }
 
-    public String getCountry() {
+    public LinkedField getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(LinkedField country) {
         this.country = country;
     }
 

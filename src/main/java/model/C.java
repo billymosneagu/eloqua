@@ -19,10 +19,10 @@ public class C {
     private String credit_card;
     private String security_code;
     private String accountnumber;
-    private String accounttype;
+    private LinkedField accounttype;
     private Vip vip;
     private String clv;
-    private String credit_card_type;
+    private LinkedField credit_card_type;
     private String age;
     private String siebel_contact_id;
     private String service_tag;
@@ -33,7 +33,7 @@ public class C {
     private Date fecha_expedicion;
     private String pasaporte;
     private boolean autoriza_mailing;
-    private String sexo;
+    private LinkedField sexo;
     private String trato;
     private String promedio_duracion_estancia;
     private String forma_pago_habitual;
@@ -91,11 +91,11 @@ public class C {
         this.accountnumber = accountnumber;
     }
 
-    public String getAccounttype() {
+    public LinkedField getAccounttype() {
         return accounttype;
     }
 
-    public void setAccounttype(String accounttype) {
+    public void setAccounttype(LinkedField accounttype) {
         this.accounttype = accounttype;
     }
 
@@ -115,11 +115,11 @@ public class C {
         this.clv = clv;
     }
 
-    public String getCredit_card_type() {
+    public LinkedField getCredit_card_type() {
         return credit_card_type;
     }
 
-    public void setCredit_card_type(String credit_card_type) {
+    public void setCredit_card_type(LinkedField credit_card_type) {
         this.credit_card_type = credit_card_type;
     }
 
@@ -203,11 +203,11 @@ public class C {
         this.autoriza_mailing = autoriza_mailing;
     }
 
-    public String getSexo() {
+    public LinkedField getSexo() {
         return sexo;
     }
 
-    public void setSexo(String sexo) {
+    public void setSexo(LinkedField sexo) {
         this.sexo = sexo;
     }
 

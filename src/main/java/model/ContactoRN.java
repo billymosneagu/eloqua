@@ -21,7 +21,7 @@ public class ContactoRN {
     private Address address;
     private Banner banner;
     private LinkedField channelUsernames;
-    private String contactType;
+    private LinkedField contactType;
     private CRMModules cRMModules;
     private CustomField customFields;
     private boolean disabled;
@@ -33,7 +33,7 @@ public class ContactoRN {
     private Name nameFurigana;
     private LinkedField notes;
     private LinkedField openIDAccounts;
-    private String organization;
+    private LinkedField organization;
     private String passwordEmailExpirationTime;
     private String passwordExpirationTime;
     private LinkedField phones;
@@ -117,11 +117,11 @@ public class ContactoRN {
         this.channelUsernames = channelUsernames;
     }
 
-    public String getContactType() {
+    public LinkedField getContactType() {
         return contactType;
     }
 
-    public void setContactType(String contactType) {
+    public void setContactType(LinkedField contactType) {
         this.contactType = contactType;
     }
 
@@ -213,11 +213,11 @@ public class ContactoRN {
         this.openIDAccounts = openIDAccount;
     }
 
-    public String getOrganization() {
+    public LinkedField getOrganization() {
         return organization;
     }
 
-    public void setOrganization(String organization) {
+    public void setOrganization(LinkedField organization) {
         this.organization = organization;
     }
 
