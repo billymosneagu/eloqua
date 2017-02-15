@@ -41,9 +41,8 @@ public class ClientRN {
         try {
             URL url = new URL("https://cloudsupport.rightnowdemo.com/services/rest/connect/v1.3/contacts");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-            String authString = "bili" + ":" + "bili2017";
-            String authStringEnc = new String(Base64.getEncoder().encode(authString.getBytes()));
-            urlConnection.setRequestProperty("Authorization", "Basic " + authStringEnc);
+            
+            urlConnection.setRequestProperty("Authorization", "Basic " + PropertiesAcces.rnenc());
              
             InputStream is = urlConnection.getInputStream();
             BufferedReader rd = new BufferedReader(new InputStreamReader(is));
@@ -101,9 +100,8 @@ public class ClientRN {
         try {
             URL url = new URL("https://cloudsupport.rightnowdemo.com/services/rest/connect/v1.3/contacts/" + id + "/emails/0");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-            String authString = "bili" + ":" + "bili2017";
-            String authStringEnc = new String(Base64.getEncoder().encode(authString.getBytes()));
-            urlConnection.setRequestProperty("Authorization", "Basic " + authStringEnc);
+            
+            urlConnection.setRequestProperty("Authorization", "Basic " + PropertiesAcces.rnenc());
             InputStream is = urlConnection.getInputStream();
             BufferedReader rd = new BufferedReader(new InputStreamReader(is));
 
@@ -142,9 +140,8 @@ public class ClientRN {
         try {
             URL url = new URL("https://cloudsupport.rightnowdemo.com/services/rest/connect/v1.3/contacts/" + id);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
-            String authString = "bili" + ":" + "bili2017";
-            String authStringEnc = new String(Base64.getEncoder().encode(authString.getBytes()));
-            urlConnection.setRequestProperty("Authorization", "Basic " + authStringEnc);
+            
+            urlConnection.setRequestProperty("Authorization", "Basic " + PropertiesAcces.rnenc());
             InputStream is = urlConnection.getInputStream();
             BufferedReader rd = new BufferedReader(new InputStreamReader(is));
 

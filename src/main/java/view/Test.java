@@ -8,8 +8,10 @@ package view;
 import com.google.gson.Gson;
 import control.Client;
 import control.ClientRN;
+import control.PropertiesAcces;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.Contact;
@@ -31,31 +33,14 @@ public class Test {
     public static void main(String[] args) {
         // TODO code application logic here
         
-//        Client c=new Client("SOAINTREALIANCONSULT1\\Vili.Mosneagu", "Admin123Soaint", "https://secure.p06.eloqua.com/API/REST/2.0");
+       Client c=new Client(PropertiesAcces.usereloqua(), PropertiesAcces.passloqua(), PropertiesAcces.urlloqua());
 //      
 //        ObjectMapper mapper=new ObjectMapper();
 //        Gson gson= new Gson();
-//
-//        Contact contacto=new Contact();
-//        contacto.setId(1); 
-//        contacto.setEmailAddress("rtinbra@norway.com");
-//        contacto.setAccountName("tinbras nuevo");
-        
-//        String json=gson.toJson(contacto);
-        //System.out.println(c.put("/data/contact", json));
-        //json=c.get("/data/contact/10");
-        ClientRN rn=new ClientRN();
-        System.out.println(rn.getInfo().size());
-//        System.out.println();
-//        try {
-//            contacto=mapper.readValue(json, Contact.class);
-//            System.out.println(contacto.toString());
-//            //ClientRN crn=new ClientRN();
-//            
-//            // crn.getNombre(539);
-//        } catch (IOException ex) {
-//            Logger.getLogger(Test.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+
+//String s="{"+'"'+"filter"+'"'+": "+'"'+"EXISTS('"+"{{ContactSegment[5]}}"+"')"+'"'+"}";
+
+          System.out.println(c.execute("/assets/contact/segment/2", "GET", null));
         
         
         
