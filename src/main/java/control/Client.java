@@ -13,7 +13,7 @@ import java.net.HttpURLConnection;
 import java.net.InetSocketAddress;
 import java.net.Proxy;
 import java.net.URL;
-import model.Response;
+import model.ResponseSegment;
 
 /**
  *
@@ -24,11 +24,10 @@ public class Client {
     private String _authToken;
     private String _baseUrl;
 
-    public Client(String user, String password, String url) {
-        _baseUrl = url;
+    public Client() {
+        _baseUrl = PropertiesAcces.urlloqua();
 
-        String authString = user + ":" + password;
-        _authToken = "Basic " + javax.xml.bind.DatatypeConverter.printBase64Binary(authString.getBytes());
+        _authToken = "Basic " + PropertiesAcces.encloqua();
     }
 
     public String get(String uri) {
@@ -49,7 +48,7 @@ public class Client {
 
     public String execute(String uri, String method, String body) {
         Proxy proxy = new Proxy(Proxy.Type.HTTP, new InetSocketAddress("10.0.0.1", 8080));
-        Response response = new Response();
+        
         String json="";
         try {
             URL url = new URL(_baseUrl + uri);
@@ -79,11 +78,11 @@ public class Client {
             }
             rd.close();
 
-            response.statusCode = conn.getResponseCode();
+            
             conn.disconnect();
         } catch (Exception e) {
             System.out.println(e.getMessage());
-            response.exception = e.getMessage();
+            
         }
         return json;
     }

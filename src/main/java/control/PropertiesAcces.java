@@ -20,21 +20,11 @@ import java.util.logging.Logger;
 public class PropertiesAcces {
     private static final Properties PROPERTIES = new Properties();
     
-    public static String usereloqua(){
+    public static String encloqua(){
         String key="";
         try {
             PROPERTIES.load(PropertiesAcces.class.getClassLoader().getResourceAsStream("properties.properties"));
-            key=PROPERTIES.getProperty("eloquauser");
-        } catch (IOException ex) {
-            Logger.getLogger(PropertiesAcces.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       return key;
-    }
-    public static String passloqua(){
-        String key="";
-        try {
-            PROPERTIES.load(PropertiesAcces.class.getClassLoader().getResourceAsStream("properties.properties"));
-            key=PROPERTIES.getProperty("eloquapass");
+            key=PROPERTIES.getProperty("elqenc");
         } catch (IOException ex) {
             Logger.getLogger(PropertiesAcces.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -16,9 +16,18 @@ public class FieldValue
 {
 	public int id;
 	public String value;
+        public String type;
 
     public int getId() {
         return id;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     public void setId(int id) {
@@ -35,7 +44,9 @@ public class FieldValue
 
     @Override
     public String toString() {
-        return "FieldValue{" + "id=" + id + ", value=" + value + '}';
+        return "FieldValue{" + "id=" + id + ", value=" + value + ", type=" + type + '}';
     }
+
+    
         
 }

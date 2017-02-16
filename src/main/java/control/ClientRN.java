@@ -20,7 +20,7 @@ import java.util.Base64;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import model.ContactoRN;
-import model.Response;
+import model.ResponseSegment;
 import org.codehaus.jackson.map.ObjectMapper;
 
 /**
